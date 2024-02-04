@@ -6,7 +6,9 @@ interface NoteProps {
   graphPath:string
 }
 const Note = ({page,graphPath}:NoteProps) => {
-  const propsBanner = "assets://" + graphPath + page.properties?.cover.replace("..", "")
+
+  const coverURL = page.properties?.cover || page.properties?.banner
+  const propsBanner =  encodeURI("assets://" + graphPath + coverURL.replace("..", ""))
 
   return (
     <div className="w-48 whitespace-nowrap rounded-lg cursor-pointer overflow-hidden"
@@ -25,11 +27,11 @@ const Note = ({page,graphPath}:NoteProps) => {
         </div>
       <div className="flex w-48 align-middle"
         style={{
-          height: '6rem',
+          height: '3rem',
           backgroundColor: 'var(--ls-quaternary-background-color)'
         }}
       >
-        <div className="mx-auto m-1 page-ref">{page.name}</div>
+        <div className="m-auto page-ref">{page.name}</div>
       </div>
     </div>
   )
@@ -38,7 +40,7 @@ const Note = ({page,graphPath}:NoteProps) => {
 interface AppProps {
   pages: PageEntity[]
   graphPath:string
-  title: stirng
+  title: string
 }
 function App({pages,graphPath,title}:AppProps) {
   return (
