@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.1.0...v1.2.0) (2024-02-04)
+
+
+### Features
+
+* add fallback cover for note cover ([0d21ec6](https://github.com/CorrectRoadH/logseq-gallery/commit/0d21ec6e807fa7105af089b1688ed0fa2b1b4b40))
+
 # [1.1.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.0.0...v1.1.0) (2024-02-04)
 
 
