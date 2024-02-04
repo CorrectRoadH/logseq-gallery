@@ -3,6 +3,7 @@ import React from "react";
 
 
 function processCoverURL(rawCoverURL: string): string {
+  console.log("rawCoverURL", rawCoverURL)
   const markdownImageRegex = /!\[.*\]\((.*)\)/;
   const matches = rawCoverURL.match(markdownImageRegex);
   if (matches && matches.length > 1) {
@@ -17,28 +18,41 @@ interface NoteProps {
 }
 const Note = ({page,graphPath}:NoteProps) => {
 
-  const rawCoverURL = page.properties?.cover || page.properties?.banner
+  const rawCoverURL = page.properties?.cover || page.properties?.banner || ""
 
   // replace markdown image path to assert path if it is 
   // to judge if it is a markdown image path like ![xxx](path)
 
-  const propsBanner =  encodeURI("assets://" + graphPath + processCoverURL(rawCoverURL).replace("..", ""))
+  const propsBanner = encodeURI("assets://" + graphPath + processCoverURL(rawCoverURL).replace("..", ""))
+
 
   return (
     <div className="w-48 whitespace-nowrap rounded-lg cursor-pointer overflow-hidden"
       data-on-click="openPage"
       data-on-click-args={page.name}
     >
-      <div className="flex flex-col align-middle justify-center overflow-hidden bg-black"
+      <div className="flex flex-col align-middle justify-center overflow-hidden"
         style={{
           height: '6rem',
+          backgroundColor: 'var(--ls-tertiary-background-color)'
         }}
       >
-        <img 
-          style={{objectFit: "fill"}}
-          alt={page.name}
-          src={propsBanner} />
-        </div>
+        {
+          rawCoverURL && <img 
+            style={{objectFit: "fill"}}
+            alt={page.name}
+            src={propsBanner} 
+          />
+        }
+        {
+          !rawCoverURL && 
+            <div className="m-auto"
+              style={{
+                color: 'var(--ls-quaternary-text-color)',
+              }}
+            >No Cover</div>
+        }
+      </div>
       <div className="flex w-48 align-middle"
         style={{
           height: '3rem',

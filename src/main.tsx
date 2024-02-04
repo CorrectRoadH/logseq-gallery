@@ -3,12 +3,9 @@ import { renderToString } from "react-dom/server";
 import React from "react";
 import "./index.css";
 
-import { logseq as PL } from "../package.json";
+// import { logseq as PL } from "../package.json";
 import Gallery from "./Gallery";
 import { PageEntity } from "@logseq/libs/dist/LSPlugin";
-
-
-const pluginId = PL.id;
 
 function main() {
 
@@ -28,14 +25,11 @@ function main() {
 
     const html = renderToString(<Gallery pages={pages} graphPath={graphPath} title={title}/>)
     logseq.provideUI({
-       key: 'h1-playground',
+       key: 'logseq-gallery',
        slot, 
        template: html,
     })
   })
-
-  console.info(`#${pluginId}: MAIN`);
-
 }
 
 logseq.ready(main).catch(console.error);
