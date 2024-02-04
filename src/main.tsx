@@ -11,6 +11,7 @@ function main() {
 
   logseq.provideModel({
     openPage (e: any) {
+      console.info(e)
       logseq.App.pushState('page',{name:e.dataset.onClickArgs})
     }
    })

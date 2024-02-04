@@ -53,13 +53,13 @@ const Note = ({page,graphPath}:NoteProps) => {
             >No Cover</div>
         }
       </div>
-      <div className="flex w-48 align-middle"
+      <div className="flex gap-1 w-48 align-middle"
         style={{
           height: '3rem',
           backgroundColor: 'var(--ls-quaternary-background-color)'
         }}
       >
-        <div className="m-auto page-ref">{page.name}</div>
+        <div className="my-auto ml-2">{page.properties?.icon || `📄`}</div><div className="my-auto page-ref">{page.name}</div>
       </div>
     </div>
   )
