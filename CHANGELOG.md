@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.2.0...v1.3.0) (2024-02-04)
+
+
+### Features
+
+* bump github action version ([7f1e96f](https://github.com/CorrectRoadH/logseq-gallery/commit/7f1e96f9a415a3fff1641cf27de849579957c3eb))
+* support emoji ([a7766e0](https://github.com/CorrectRoadH/logseq-gallery/commit/a7766e0b843b167480e27fb6e5c415ba7150ef7f))
+
 # [1.2.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.1.0...v1.2.0) (2024-02-04)
 
 
