@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.0.0...v1.1.0) (2024-02-04)
+
+
+### Features
+
+* implement multiple type url ([5dfa8ff](https://github.com/CorrectRoadH/logseq-gallery/commit/5dfa8ff82d17b2a055c95b5af342304a594178c2))
+
 # 1.0.0 (2024-02-04)
 
 
