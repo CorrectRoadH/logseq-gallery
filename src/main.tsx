@@ -4,7 +4,7 @@ import React from "react";
 import "./index.css";
 
 import { logseq as PL } from "../package.json";
-import App from "./App";
+import Gallery from "./Gallery";
 import { PageEntity } from "@logseq/libs/dist/LSPlugin";
 
 
@@ -26,7 +26,7 @@ function main() {
     const pages = await logseq.DB.q(query) as PageEntity[]
     const graphPath = (await logseq.App.getCurrentGraph())?.path || "";
 
-    const html = renderToString(<App pages={pages} graphPath={graphPath} title={title}/>)
+    const html = renderToString(<Gallery pages={pages} graphPath={graphPath} title={title}/>)
     logseq.provideUI({
        key: 'h1-playground',
        slot, 

@@ -1,14 +1,28 @@
 import { PageEntity } from "@logseq/libs/dist/LSPlugin";
 import React from "react";
 
+
+function processCoverURL(rawCoverURL: string): string {
+  const markdownImageRegex = /!\[.*\]\((.*)\)/;
+  const matches = rawCoverURL.match(markdownImageRegex);
+  if (matches && matches.length > 1) {
+      return matches[1];
+  }
+  return rawCoverURL;
+}
+
 interface NoteProps {
   page: PageEntity
   graphPath:string
 }
 const Note = ({page,graphPath}:NoteProps) => {
 
-  const coverURL = page.properties?.cover || page.properties?.banner
-  const propsBanner =  encodeURI("assets://" + graphPath + coverURL.replace("..", ""))
+  const rawCoverURL = page.properties?.cover || page.properties?.banner
+
+  // replace markdown image path to assert path if it is 
+  // to judge if it is a markdown image path like ![xxx](path)
+
+  const propsBanner =  encodeURI("assets://" + graphPath + processCoverURL(rawCoverURL).replace("..", ""))
 
   return (
     <div className="w-48 whitespace-nowrap rounded-lg cursor-pointer overflow-hidden"
@@ -37,12 +51,12 @@ const Note = ({page,graphPath}:NoteProps) => {
   )
 }
 
-interface AppProps {
+interface GalleryProps {
   pages: PageEntity[]
   graphPath:string
   title: string
 }
-function App({pages,graphPath,title}:AppProps) {
+function Gallery({pages,graphPath,title}:GalleryProps) {
   return (
     <main>
       <h3>{title}</h3>
@@ -61,4 +75,4 @@ function App({pages,graphPath,title}:AppProps) {
   
 }
 
-export default App;
+export default Gallery;
