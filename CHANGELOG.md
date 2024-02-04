@@ -1,3 +1,18 @@
+# 1.0.0 (2024-02-04)
+
+
+### Bug Fixes
+
+* fix cicd error ([20c6fde](https://github.com/CorrectRoadH/logseq-gallery/commit/20c6fdeedc10011f346be7b79a8d8d6221dacbaf))
+* fix github cicd ([d9d9919](https://github.com/CorrectRoadH/logseq-gallery/commit/d9d9919c5439886e7bb0f10d13fe380761aa2698))
+* fix github cicd no permission ([536f3f8](https://github.com/CorrectRoadH/logseq-gallery/commit/536f3f80c6702928b837de1b7102fa65897a2bbf))
+* fix github cicd screts ([c8b9e68](https://github.com/CorrectRoadH/logseq-gallery/commit/c8b9e683834846bf8a494e826891a7561e1bce20))
+
+
+### Features
+
+* add fallback for cover ([3dcc8af](https://github.com/CorrectRoadH/logseq-gallery/commit/3dcc8af4b3ee3d418fa8da0e857f0f5fb1a8f265))
+
 ## [2.1.1](https://github.com/pengx17/logseq-plugin-template-react/compare/v2.1.0...v2.1.1) (2022-03-24)
 
 
