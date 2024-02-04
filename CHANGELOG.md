@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.3.0...v1.4.0) (2024-02-04)
+
+
+### Features
+
+* add license ([84f2e2f](https://github.com/CorrectRoadH/logseq-gallery/commit/84f2e2fc4a4f72c2868b1a3d441d1ed40ad1ccbd))
+* update screenshot ([294f22c](https://github.com/CorrectRoadH/logseq-gallery/commit/294f22cffbbbf3b9bcd5a41228dde482da8f1279))
+
 # [1.3.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.2.0...v1.3.0) (2024-02-04)
 
 
