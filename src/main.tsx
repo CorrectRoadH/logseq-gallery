@@ -1,60 +1,41 @@
 import "@logseq/libs";
-
+import { renderToString } from "react-dom/server";
 import React from "react";
-import * as ReactDOM from "react-dom/client";
-import App from "./App";
 import "./index.css";
 
 import { logseq as PL } from "../package.json";
+import App from "./App";
+import { PageEntity } from "@logseq/libs/dist/LSPlugin";
 
-// @ts-expect-error
-const css = (t, ...args) => String.raw(t, ...args);
 
 const pluginId = PL.id;
 
 function main() {
+
+  logseq.provideModel({
+    openPage (e: any) {
+      logseq.App.pushState('page',{name:e.dataset.onClickArgs})
+    }
+   })
+   
+  logseq.App.onMacroRendererSlotted(async ({ slot, payload}) => {
+    const [type,query,title] = payload.arguments
+
+    if (type !== ':gallery') return
+
+    const pages = await logseq.DB.q(query) as PageEntity[]
+    const graphPath = (await logseq.App.getCurrentGraph())?.path || "";
+
+    const html = renderToString(<App pages={pages} graphPath={graphPath} title={title}/>)
+    logseq.provideUI({
+       key: 'h1-playground',
+       slot, 
+       template: html,
+    })
+  })
+
   console.info(`#${pluginId}: MAIN`);
-  const root = ReactDOM.createRoot(document.getElementById("app")!);
 
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-
-  function createModel() {
-    return {
-      show() {
-        logseq.showMainUI();
-      },
-    };
-  }
-
-  logseq.provideModel(createModel());
-  logseq.setMainUIInlineStyle({
-    zIndex: 11,
-  });
-
-  const openIconName = "template-plugin-open";
-
-  logseq.provideStyle(css`
-    .${openIconName} {
-      opacity: 0.55;
-      font-size: 20px;
-      margin-top: 4px;
-    }
-
-    .${openIconName}:hover {
-      opacity: 0.9;
-    }
-  `);
-
-  logseq.App.registerUIItem("toolbar", {
-    key: openIconName,
-    template: `
-      <div data-on-click="show" class="${openIconName}">⚙️</div>
-    `,
-  });
 }
 
 logseq.ready(main).catch(console.error);
