@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.5.1...v1.6.0) (2024-02-05)
+
+
+### Bug Fixes
+
+* fix only single render in single page ([d4d5a81](https://github.com/CorrectRoadH/logseq-gallery/commit/d4d5a81ede3dfa9dabbc4d87f128d481c0cb307c))
+
+
+### Features
+
+* update plugins id ([2c806d4](https://github.com/CorrectRoadH/logseq-gallery/commit/2c806d4486d8f20f1ea5546f1cddfdc439737b95))
+
 ## [1.5.1](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.5.0...v1.5.1) (2024-02-05)
 
 
