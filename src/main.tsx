@@ -26,7 +26,7 @@ function main() {
 
     const html = renderToString(<Gallery pages={pages} graphPath={graphPath} title={title}/>)
     logseq.provideUI({
-       key: 'logseq-gallery',
+       key: `gallery-${payload.uuid}-${slot}`,
        slot, 
        template: html,
     })
