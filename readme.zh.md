@@ -3,12 +3,6 @@
 ## Features
 Implement a gallery renderer for Logseq. like Notion
 
-## Roadmap
-- [] Support Tags under title
-- [] Support generate cover from content
-- [] Support generate cover from first image in content
-- [] Add Settings
-
 ## Usage
 ```
 {{renderer :gallery, <page query>, <title>}}
