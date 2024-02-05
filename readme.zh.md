@@ -1,17 +1,27 @@
 # Logseq Gallery
 
 ## Features
-Implement a gallery renderer for Logseq. like Notion
+一个 Logseq 插件，给 page query 的结果提供 Gallery 视图。就像 Notion 一样。
 
-## Usage
+![](./imgs/screenshot-1.png)
+
+## Roadmap
+- [] Display Tags under title
+- [] Support generate cover from content
+- [] Add generate cover from PDF files
+- [] Support into editor mode when click the space of gallery
+- [] Support support https url image as cover
+
+## 用例
 ```
 {{renderer :gallery, <page query>, <title>}}
 ```
+Support property Field
+| Function | Field | Example |
+| -- | -- | -- |
+| Cover | `cover` | `cover:: ../assets/IMG_2694_1706277077580_0.jpeg`  |
+| Banner | `banner` | `banner:: ![untitle](../assets/IMG_2694_1706277077580_0.jpeg)`|
+| Icon | `icon` | `icon:: 💻` |  
 
-![](./imgs/screenshot.png)
-
-the Note should have `cover` or `banner` property.  
-for example:
-`cover:: ../assets/IMG_2694_1706277077580_0.jpeg`
-
-and the url is compatible with file path(`../assets/IMG_2694_1706277077580_0.jpeg`) and markdown url(`![untitle](../assets/IMG_2694_1706277077580_0.jpeg)`).
+**注意**
+`cover` 和 `banner` 是同时支持 `../assets/IMG_2694_1706277077580_0.jpeg` 和  `![untitle](../assets/IMG_2694_1706277077580_0.jpeg)` 的语法.

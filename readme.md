@@ -1,23 +1,27 @@
 # Logseq Gallery
 
 ## Features
-Implement a gallery renderer for Logseq. like Notion
+Offering gallery view for result of page query in Logseq. like Notion.
+
+![](./imgs/screenshot-1.png)
 
 ## Roadmap
-- [] Support Tags under title
+- [] Display Tags under title
 - [] Support generate cover from content
-- [] Support generate cover from first image in content
-- [] Add Settings
+- [] Add generate cover from PDF files
+- [] Support into editor mode when click the space of gallery
+- [] Support support https url image as cover
 
 ## Usage
 ```
 {{renderer :gallery, <page query>, <title>}}
 ```
+Support property Field
+| Function | Field | Example |
+| -- | -- | -- |
+| Cover | `cover` | `cover:: ../assets/IMG_2694_1706277077580_0.jpeg`  |
+| Banner | `banner` | `banner:: ![untitle](../assets/IMG_2694_1706277077580_0.jpeg)`|
+| Icon | `icon` | `icon:: 💻` |  
 
-![](./imgs/screenshot.png)
-
-the Note should have `cover` or `banner` property.  
-for example:
-`cover:: ../assets/IMG_2694_1706277077580_0.jpeg`
-
-and the url is compatible with file path(`../assets/IMG_2694_1706277077580_0.jpeg`) and markdown url(`![untitle](../assets/IMG_2694_1706277077580_0.jpeg)`).
+**Note**
+`cover` and `banner` are both support `../assets/IMG_2694_1706277077580_0.jpeg` and  `![untitle](../assets/IMG_2694_1706277077580_0.jpeg)`.

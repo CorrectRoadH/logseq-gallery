@@ -1,9 +1,9 @@
 import { PageEntity } from "@logseq/libs/dist/LSPlugin";
 import React from "react";
 
-
 function processCoverURL(rawCoverURL: string): string {
-  console.log("rawCoverURL", rawCoverURL)
+  rawCoverURL = String(rawCoverURL).trim();
+  
   const markdownImageRegex = /!\[.*\]\((.*)\)/;
   const matches = rawCoverURL.match(markdownImageRegex);
   if (matches && matches.length > 1) {
@@ -25,6 +25,7 @@ const Note = ({page,graphPath}:NoteProps) => {
 
   const propsBanner = encodeURI("assets://" + graphPath + processCoverURL(rawCoverURL).replace("..", ""))
 
+  // check is file exist
 
   return (
     <div className="w-48 whitespace-nowrap rounded-lg cursor-pointer overflow-hidden"
@@ -38,8 +39,13 @@ const Note = ({page,graphPath}:NoteProps) => {
         }}
       >
         {
-          rawCoverURL && <img 
-            style={{objectFit: "fill"}}
+          rawCoverURL && 
+          <img 
+            style={{
+              objectFit: "cover",
+              height: '6rem',
+              width: '12rem',
+            }}
             alt={page.name}
             src={propsBanner} 
           />
@@ -59,7 +65,8 @@ const Note = ({page,graphPath}:NoteProps) => {
           backgroundColor: 'var(--ls-quaternary-background-color)'
         }}
       >
-        <div className="my-auto ml-2">{page.properties?.icon || `📄`}</div><div className="my-auto page-ref">{page.name}</div>
+        <div className="my-auto ml-2">{page.properties?.icon || `📄`}</div>
+        <div className="my-auto page-ref truncate">{page.originalName}</div>
       </div>
     </div>
   )
@@ -82,6 +89,10 @@ function Gallery({pages,graphPath,title}:GalleryProps) {
               page={page}
               graphPath={graphPath}
             />)
+        }
+        {/* click here in to edit */}
+        {
+          pages.length === 0 && <div>There is nothing</div>
         }
       </div>
     </main>
