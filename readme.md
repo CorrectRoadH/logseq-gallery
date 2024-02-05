@@ -10,7 +10,6 @@ Offering gallery view for result of page query in Logseq. like Notion.
 - [] Support generate cover from content
 - [] Add generate cover from PDF files
 - [] Support into editor mode when click the space of gallery
-- [] Support support https url image as cover
 
 ## Usage
 ```
@@ -24,4 +23,4 @@ Support property Field
 | Icon | `icon` | `icon:: 💻` |  
 
 **Note**
-`cover` and `banner` are both support `../assets/IMG_2694_1706277077580_0.jpeg` and  `![untitle](../assets/IMG_2694_1706277077580_0.jpeg)`.
+`cover` and `banner` are both support `../assets/IMG_2694_1706277077580_0.jpeg`, `![untitle](../assets/IMG_2694_1706277077580_0.jpeg)` and `http(s)://xxx/xxx`.

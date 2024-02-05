@@ -24,4 +24,4 @@ Support property Field
 | Icon | `icon` | `icon:: 💻` |  
 
 **注意**
-`cover` 和 `banner` 是同时支持 `../assets/IMG_2694_1706277077580_0.jpeg` 和  `![untitle](../assets/IMG_2694_1706277077580_0.jpeg)` 的语法.
+`cover` 和 `banner` 是同时支持 `../assets/IMG_2694_1706277077580_0.jpeg` 和 `![untitle](../assets/IMG_2694_1706277077580_0.jpeg)` 还有 `http(s)://xxx/xxx` 的语法.
