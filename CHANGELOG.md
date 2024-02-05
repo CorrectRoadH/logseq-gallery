@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.4.0...v1.5.0) (2024-02-05)
+
+
+### Features
+
+* add logo ([1075ff1](https://github.com/CorrectRoadH/logseq-gallery/commit/1075ff1e11d69a334e7c7c15874c614ebf851fff))
+
 # [1.4.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.3.0...v1.4.0) (2024-02-04)
 
 
