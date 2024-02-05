@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.5.0...v1.5.1) (2024-02-05)
+
+
+### Bug Fixes
+
+* fix logo not display ([106c0ef](https://github.com/CorrectRoadH/logseq-gallery/commit/106c0ef746f9774cc5a8f5bbe5ad19a0185c5deb))
+
 # [1.5.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.4.0...v1.5.0) (2024-02-05)
 
 
