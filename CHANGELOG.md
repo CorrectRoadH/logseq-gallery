@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.6.0...v1.7.0) (2024-02-06)
+
+
+### Features
+
+* cover support http img ([439a18b](https://github.com/CorrectRoadH/logseq-gallery/commit/439a18bb0df09c086d901aaf37a18104b521f1bb))
+* trucate too long title ([aa862fd](https://github.com/CorrectRoadH/logseq-gallery/commit/aa862fd8f17c8d44437e16248a121271e4e45e6d))
+
 # [1.6.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.5.1...v1.6.0) (2024-02-05)
 
 
