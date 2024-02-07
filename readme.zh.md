@@ -16,6 +16,11 @@
 ```
 {{renderer :gallery, <page query>, <title>}}
 ```
+比如
+```
+{{renderer :gallery, (page-property tag area), Area}}
+```
+
 Support property Field
 | Function | Field | Example |
 | -- | -- | -- |

@@ -15,6 +15,11 @@ Offering gallery view for result of page query in Logseq. like Notion.
 ```
 {{renderer :gallery, <page query>, <title>}}
 ```
+for example
+```
+{{renderer :gallery, (page-property tag area), Area}}
+```
+
 Support property Field
 | Function | Field | Example |
 | -- | -- | -- |
