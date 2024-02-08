@@ -66,7 +66,7 @@ const Note = ({page,graphPath}:NoteProps) => {
         }}
       >
         <div className="my-auto ml-2">{page.properties?.icon || `📄`}</div>
-        <div className="my-auto page-ref truncate">{page.originalName}</div>
+        <div className="my-auto page-ref truncate">{page.originalName || page.page.originalName}</div>
       </div>
     </div>
   )
@@ -78,6 +78,7 @@ interface GalleryProps {
   title: string
 }
 function Gallery({pages,graphPath,title}:GalleryProps) {
+  console.log(pages)
   return (
     <main>
       <h3>{title}</h3>
