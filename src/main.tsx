@@ -7,20 +7,20 @@ import "./index.css";
 import Gallery from "./Gallery";
 import { PageEntity,BlockEntity } from "@logseq/libs/dist/LSPlugin";
 
-async function processPages(pages: (PageEntity | BlockEntity)[]) {
+async function processPages(pages: (PageEntity | BlockEntity)[]):Promise<(PageEntity)[]> {
   const processedPages = await Promise.all(pages.map(async (page) => {
-    if (page.content != undefined) {
-      return (await logseq.Editor.getPage(page.page.id)) || page;
+    if (page.originalName == undefined) {
+      return (await logseq.Editor.getPage(page.page.id)) as PageEntity;
     }
-    return page;
+    return page as PageEntity;
   }));
-  return processedPages as PageEntity[]; // 返回的是 PageEntity[]
+  return processedPages;
 }
 
 function main() {
 
   logseq.provideModel({
-    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     openPage (e: any) {
       console.info(e)
       logseq.App.pushState('page',{name:e.dataset.onClickArgs})
