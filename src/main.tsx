@@ -45,6 +45,7 @@ function main() {
     logseq.provideUI({
        key: `gallery-${payload.uuid}-${slot}`,
        slot, 
+       reset: true,
        template: html,
     })
   })
