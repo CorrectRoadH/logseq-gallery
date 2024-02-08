@@ -1,3 +1,12 @@
+## [1.7.1](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.7.0...v1.7.1) (2024-02-08)
+
+
+### Bug Fixes
+
+* fix display error when  query result is block ([5244476](https://github.com/CorrectRoadH/logseq-gallery/commit/524447608a13443eabb548ddbad11c100aae2ce0))
+* fix duplicate render ([bd9df63](https://github.com/CorrectRoadH/logseq-gallery/commit/bd9df63ce770d5ab1f6e76d1021a1a47589be8d6))
+* fix type error ([b2fb873](https://github.com/CorrectRoadH/logseq-gallery/commit/b2fb873a277ad3202f48099466345ffa9a6e1720))
+
 # [1.7.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.6.0...v1.7.0) (2024-02-06)
 
 
