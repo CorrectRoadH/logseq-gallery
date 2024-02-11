@@ -22,7 +22,6 @@ function main() {
   logseq.provideModel({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     openPage (e: any) {
-      console.info(e)
       logseq.App.pushState('page',{name:e.dataset.onClickArgs})
     }
    })
@@ -33,7 +32,6 @@ function main() {
     if (type !== ':gallery') return
 
     const pages = await logseq.DB.q(query) as PageEntity[] | BlockEntity[]
-    console.log(await logseq.DB.q(query))
     const graphPath = (await logseq.App.getCurrentGraph())?.path || "";
 
     const processPage = (await processPages(pages))

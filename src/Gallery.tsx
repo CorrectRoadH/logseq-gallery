@@ -22,8 +22,7 @@ const Note = ({page,graphPath}:NoteProps) => {
 
   // replace markdown image path to assert path if it is 
   // to judge if it is a markdown image path like ![xxx](path)
-
-  const propsBanner =  graphPath.startsWith("http") ? graphPath: encodeURI("assets://" + graphPath + processCoverURL(rawCoverURL).replace("..", ""))
+  const propsBanner =  rawCoverURL.startsWith("http") ? rawCoverURL: encodeURI("assets://" + graphPath + processCoverURL(rawCoverURL).replace("..", ""))
 
   // check is file exist
 
@@ -78,7 +77,6 @@ interface GalleryProps {
   title: string
 }
 function Gallery({pages,graphPath,title}:GalleryProps) {
-  console.log(pages)
   return (
     <main>
       <h3>{title}</h3>
