@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.8.0...v1.9.0) (2024-02-11)
+
+
+### Features
+
+* implement display markdown content as cover ([44fb6ba](https://github.com/CorrectRoadH/logseq-gallery/commit/44fb6ba45cd2f52133c5f74eb2f53b379d8875aa))
+
 # [1.8.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.7.2...v1.8.0) (2024-02-11)
 
 
