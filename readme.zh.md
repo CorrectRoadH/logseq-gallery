@@ -6,10 +6,10 @@
 ![](./imgs/screenshot-1.png)
 
 ## Roadmap
--[] Display Tags under title
--[] Support generate cover from content
--[] Add generate cover from PDF files
--[] Support into editor mode when click the space of gallery
+- [ ] Display Tags under title
+- [ ] Support generate cover from content
+- [ ] Add generate cover from PDF files
+- [ ] Support into editor mode when click the space of gallery
 
 ## 用例
 ```
