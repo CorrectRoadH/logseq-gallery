@@ -9,10 +9,13 @@ import { PageEntity,BlockEntity } from "@logseq/libs/dist/LSPlugin";
 
 async function processPages(pages: (PageEntity | BlockEntity)[]):Promise<(PageEntity)[]> {
   const processedPages = await Promise.all(pages.map(async (page) => {
+
     if (page.originalName == undefined) {
-      return (await logseq.Editor.getPage(page.page.id)) as PageEntity;
+      // blockEntity has content field.
+      return {...(await logseq.Editor.getPage(page.page.id)),content:page.content} as PageEntity;
     }
-    return page as PageEntity;
+    const file = await logseq.Editor.getPage(page?.file?.id || 1) || {content:""}
+    return {...page, content:file.content} as PageEntity;
   }));
   return processedPages;
 }
@@ -39,6 +42,7 @@ function main() {
     const processPageSet = new Set(processPage.map((page) => page.id))
     const processPageArray = Array.from(processPageSet).map((id) => processPage.find((page) => page.id === id)) as PageEntity[]
 
+    
     const html = renderToString(<Gallery pages={processPageArray} graphPath={graphPath} title={title}/>)
     logseq.provideUI({
        key: `gallery-${payload.uuid}-${slot}`,

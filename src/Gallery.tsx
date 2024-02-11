@@ -1,6 +1,9 @@
 import { PageEntity } from "@logseq/libs/dist/LSPlugin";
 import React from "react";
 
+const WIDTH = 12
+const HEIGHT = 6
+
 function processCoverURL(rawCoverURL: string): string {
   rawCoverURL = String(rawCoverURL).trim();
   
@@ -11,13 +14,31 @@ function processCoverURL(rawCoverURL: string): string {
   }
   return rawCoverURL;
 }
+import Markdown from 'react-markdown'
 
 interface NoteProps {
   page: PageEntity
   graphPath:string
 }
-const Note = ({page,graphPath}:NoteProps) => {
 
+const processMarkdown = (markdown:string|undefined) => {
+  if (!markdown) {
+    return markdown
+  }
+  // remove all xx:: xx
+  const propsRegex = /.*::.*/
+  while (markdown.match(propsRegex)) {
+    markdown = markdown.replace(propsRegex, "")
+  }
+
+  // // remove -
+  // markdown = markdown.replaceAll("- ", "")
+
+
+  return markdown
+}
+
+const Note = ({page,graphPath}:NoteProps) => {
   const rawCoverURL = page.properties?.cover || page.properties?.banner || ""
 
   // replace markdown image path to assert path if it is 
@@ -26,14 +47,16 @@ const Note = ({page,graphPath}:NoteProps) => {
 
   // check is file exist
 
+  const markdown = processMarkdown(page.content)
   return (
     <div className="w-48 whitespace-nowrap rounded-lg cursor-pointer overflow-hidden"
       data-on-click="openPage"
       data-on-click-args={page.name}
     >
-      <div className="flex flex-col align-middle justify-center overflow-hidden"
+      <div className="relative flex flex-col align-middle justify-center overflow-hidden"
         style={{
-          height: '6rem',
+          height: `${HEIGHT}rem`,
+          width: `${WIDTH}rem`,
           backgroundColor: 'var(--ls-tertiary-background-color)'
         }}
       >
@@ -42,15 +65,32 @@ const Note = ({page,graphPath}:NoteProps) => {
           <img 
             style={{
               objectFit: "cover",
-              height: '6rem',
-              width: '12rem',
+              height: `${HEIGHT}rem`,
+              width: `${WIDTH}rem`,
             }}
             alt={page.name}
             src={propsBanner} 
           />
         }
         {
-          !rawCoverURL && 
+          !rawCoverURL && markdown && (
+            <div
+              style={{ 
+                position: 'absolute',
+                height: `${HEIGHT/0.4}rem`,
+                width: `${WIDTH/0.4}rem`,
+                top: '0',
+                margin: '2px',
+                transform: `scale(0.4)`,
+                transformOrigin: 'left top',
+              }}
+            >
+              <Markdown>{markdown}</Markdown>
+            </div>
+          )
+        }
+        {
+          !rawCoverURL && !markdown && 
             <div className="m-auto"
               style={{
                 color: 'var(--ls-quaternary-text-color)',
