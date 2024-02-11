@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.7.1...v1.7.2) (2024-02-11)
+
+
+### Bug Fixes
+
+* fix http img not load ([223a061](https://github.com/CorrectRoadH/logseq-gallery/commit/223a061a208754f40a4500106baff44dbbb7b993))
+
 ## [1.7.1](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.7.0...v1.7.1) (2024-02-08)
 
 
