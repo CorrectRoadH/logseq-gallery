@@ -62,7 +62,7 @@ const Tag = ({tag}:{tag:string}) => {
   const color = stringToDarkerColor(tag)
   return (
     <div
-      className="rounded-lg p-1 text-xs text-white"
+      className="rounded-sm p-1 text-xs text-white"
       style={{      
         backgroundColor: color,      
       }}
