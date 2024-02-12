@@ -27,6 +27,9 @@ Support property Field
 | Cover | `cover` | `cover:: ../assets/IMG_2694_1706277077580_0.jpeg`  |
 | Banner | `banner` | `banner:: ![untitle](../assets/IMG_2694_1706277077580_0.jpeg)`|
 | Icon | `icon` | `icon:: 💻` |  
+| Tags | `tags` | `tags:: Computer, Operating System, MIT, RISC-V` |
 
 **Note**
 `cover` and `banner` are both support `../assets/IMG_2694_1706277077580_0.jpeg`, `![untitle](../assets/IMG_2694_1706277077580_0.jpeg)` and `http(s)://xxx/xxx`.
+
+if `covert` and `banner` both are empty. the cover will be the result of markdown rendered content.
