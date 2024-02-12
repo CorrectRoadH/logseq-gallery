@@ -1,3 +1,16 @@
+# [1.10.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.9.0...v1.10.0) (2024-02-12)
+
+
+### Bug Fixes
+
+* fix build error ([ed86690](https://github.com/CorrectRoadH/logseq-gallery/commit/ed86690ef0f68980ccef6fe722f5f6f8fd43d918))
+
+
+### Features
+
+* display tags under title ([686576f](https://github.com/CorrectRoadH/logseq-gallery/commit/686576fa0ed5008c2a90ec896cc19d705c95907b))
+* polish tag rouned ([863da37](https://github.com/CorrectRoadH/logseq-gallery/commit/863da3720a63770ab59f9dd6de03912c8abef2eb))
+
 # [1.9.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.8.0...v1.9.0) (2024-02-11)
 
 
