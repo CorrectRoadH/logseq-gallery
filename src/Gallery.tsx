@@ -1,8 +1,28 @@
 import { PageEntity } from "@logseq/libs/dist/LSPlugin";
 import React from "react";
 
-const WIDTH = 12
-const HEIGHT = 6
+const WIDTH = 15
+const HEIGHT = 8
+
+function stringToDarkerColor(str: string): string {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  
+  // 限制颜色的亮度和饱和度
+  let color = '#';
+  for (let i = 0; i < 3; i++) {
+    // 使用位运算确保颜色值不会太高，以生成较暗的颜色
+    const value = (hash >> (i * 8)) & 0xFF;
+    // 通过减小颜色值的范围来确保颜色较暗
+    const darkValue = Math.floor((value % 128) + 64).toString(16); // 限制在64-192之间以确保颜色不会太亮
+    color += (darkValue.length < 2 ? '0' : '') + darkValue;
+  }
+  return color;
+}
+
+// 示例
 
 function processCoverURL(rawCoverURL: string): string {
   rawCoverURL = String(rawCoverURL).trim();
@@ -38,6 +58,19 @@ const processMarkdown = (markdown:string|undefined) => {
   return markdown
 }
 
+const Tag = ({tag}:{tag:string}) => {
+  const color = stringToDarkerColor(tag)
+  return (
+    <div
+      className="rounded-lg p-1 text-xs text-white"
+      style={{      
+        backgroundColor: color,      
+      }}
+    >{tag}</div>
+  )
+}
+
+
 const Note = ({page,graphPath}:NoteProps) => {
   const rawCoverURL = page.properties?.cover || page.properties?.banner || ""
 
@@ -49,7 +82,10 @@ const Note = ({page,graphPath}:NoteProps) => {
 
   const markdown = processMarkdown(page.content)
   return (
-    <div className="w-48 whitespace-nowrap rounded-lg cursor-pointer overflow-hidden"
+    <div className="whitespace-nowrap rounded-lg cursor-pointer overflow-hidden"
+      style={{
+        width: `${WIDTH}rem`,
+      }}
       data-on-click="openPage"
       data-on-click-args={page.name}
     >
@@ -98,14 +134,24 @@ const Note = ({page,graphPath}:NoteProps) => {
             >No Cover</div>
         }
       </div>
-      <div className="flex gap-1 w-48 align-middle"
+      <div 
+        className="flex flex-col h-full p-2 rounded-b-lg overflow-hidden"
         style={{
-          height: '3rem',
           backgroundColor: 'var(--ls-quaternary-background-color)'
         }}
-      >
-        <div className="my-auto ml-2">{page.properties?.icon || `📄`}</div>
-        <div className="my-auto page-ref truncate">{page.originalName || page.page.originalName}</div>
+      > 
+        <div className="flex gap-1">
+          <div className="my-auto">{page.properties?.icon || `📄`}</div>
+          <div className="my-auto page-ref truncate">{page.originalName || page.page.originalName}</div>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {
+            page.properties?.tags?.map((tag:string)=>{
+              return <Tag key={tag} tag={tag}/>
+            })
+          }
+        </div>
       </div>
     </div>
   )

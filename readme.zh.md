@@ -6,7 +6,7 @@
 ![](./imgs/screenshot-1.png)
 
 ## Roadmap
-- [ ] Display Tags under title
+- [x] Display Tags under title
 - [x] Support generate cover from content
 - [ ] Add generate cover from PDF files
 - [ ] Support into editor mode when click the space of gallery
