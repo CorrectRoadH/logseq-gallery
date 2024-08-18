@@ -147,12 +147,12 @@ const Note = ({page,graphPath}:NoteProps) => {
 
         <div className="flex flex-wrap gap-2">
           {
-            Array.isArray(page.properties?.tags) && page.properties.tags.length > 0 ? (
+            page.properties && page.properties.tags && Array.isArray(page.properties.tags) && page.properties.tags.length > 0 ? (
               page.properties.tags.map((tag: string) => (
                 <Tag key={tag} tag={tag} />
               ))
             ) : (
-              <div>无标签</div>
+              <div></div>
             )
           }
         </div>
