@@ -1,4 +1,4 @@
-import { PageEntity } from "@logseq/libs/dist/LSPlugin";
+import type { PageEntity } from "@logseq/libs/dist/LSPlugin";
 import React from "react";
 
 const WIDTH = 15
