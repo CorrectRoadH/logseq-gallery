@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.11.0...v1.11.1) (2024-08-18)
+
+
+### Bug Fixes
+
+* fix crash when  tags is null ([b669d58](https://github.com/CorrectRoadH/logseq-gallery/commit/b669d584340c6bc8200b2374c349855b83d79f86))
+
 # [1.10.0](https://github.com/CorrectRoadH/logseq-gallery/compare/v1.9.0...v1.10.0) (2024-02-12)
 
 
